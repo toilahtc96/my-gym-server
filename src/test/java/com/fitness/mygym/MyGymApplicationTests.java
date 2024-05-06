@@ -1,4 +1,4 @@
-package com.fitness.myGym;
+package com.fitness.mygym;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

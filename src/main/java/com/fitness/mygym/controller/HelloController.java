@@ -1,4 +1,4 @@
-package com.fitness.myGym.controller;
+package com.fitness.mygym.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

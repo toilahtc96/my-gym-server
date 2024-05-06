@@ -1,4 +1,4 @@
-package com.fitness.myGym;
+package com.fitness.mygym;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
