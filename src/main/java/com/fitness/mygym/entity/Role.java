@@ -1,5 +1,6 @@
 package com.fitness.mygym.entity;
 
+import com.fitness.mygym.constans.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,4 +18,6 @@ public class Role {
     private int id;
     @Column(name = "role_name")
     private String roleName;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

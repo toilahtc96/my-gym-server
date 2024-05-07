@@ -1,5 +1,6 @@
 package com.fitness.mygym.entity;
 
+import com.fitness.mygym.constans.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,4 +22,6 @@ public class PtUser {
     private int experience;
     private String extra;
     private int rate;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

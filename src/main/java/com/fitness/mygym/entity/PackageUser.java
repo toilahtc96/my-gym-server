@@ -1,5 +1,6 @@
 package com.fitness.mygym.entity;
 
+import com.fitness.mygym.constans.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,4 +20,6 @@ public class PackageUser {
     private int userId;
     @Column(name = "package_id")
     private int packageId;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

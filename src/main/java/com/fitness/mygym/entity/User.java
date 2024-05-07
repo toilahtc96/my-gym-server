@@ -30,6 +30,7 @@ public class User implements UserDetails {
     private String name;
     private String phone;
     private String email;
+    @Enumerated(EnumType.STRING)
     private Status status;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

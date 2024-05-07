@@ -1,5 +1,6 @@
 package com.fitness.mygym.entity;
 
+import com.fitness.mygym.constans.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,4 +26,6 @@ public class Company {
     private String tiktokLink;
     @Column(name = "instagram_link")
     private String instagramLink;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

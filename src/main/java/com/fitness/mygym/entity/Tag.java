@@ -1,9 +1,7 @@
 package com.fitness.mygym.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fitness.mygym.constans.Status;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +17,6 @@ public class Tag {
     @Id
     private int id;
     private String name;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

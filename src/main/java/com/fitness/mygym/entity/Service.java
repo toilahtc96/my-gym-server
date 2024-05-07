@@ -1,9 +1,7 @@
 package com.fitness.mygym.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
+import com.fitness.mygym.constans.Status;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,4 +20,6 @@ public class Service {
     private String information;
     private String icon;
     private String background;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }
