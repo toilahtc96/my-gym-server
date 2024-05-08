@@ -11,4 +11,6 @@ public interface HeaderRepository extends JpaRepository<Header, Integer> {
 
     Header getById(int id);
     List<Header> getByStatus(Status status);
+
+    Header getFirstByStatus(Status status);
 }

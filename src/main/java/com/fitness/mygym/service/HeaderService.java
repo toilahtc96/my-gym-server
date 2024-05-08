@@ -58,4 +58,8 @@ public class HeaderService {
     public List<Header> getAllByStatus(Status status) {
         return headerRepository.getByStatus(status);
     }
+
+    public Header findFirstActive() {
+        return headerRepository.getFirstByStatus(Status.ACTIVE);
+    }
 }
