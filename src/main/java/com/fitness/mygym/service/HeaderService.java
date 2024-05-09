@@ -59,7 +59,7 @@ public class HeaderService {
         return headerRepository.getByStatus(status);
     }
 
-    public Header findFirstActive() {
-        return headerRepository.getFirstByStatus(Status.ACTIVE);
+    public List<Header> findThreeActive() {
+        return headerRepository.getByStatus(Status.ACTIVE);
     }
 }
