@@ -7,22 +7,26 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class Service {
+public class AboutUs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
-    private String title;
+    @Column(name = "small_title")
+    private String smallTitle;
+    @Column(name = "main_title")
+    private String mainTitle;
     @Column(length = 5000)
     private String information;
-    @Column(length = 5000)
-    private String icon;
-    @Column(length = 5000)
-    private String background;
+    @Column(name = "benefit_percent-info",length = 5000)
+    private String benefitPercentInfo;
+    @Column(length = 1000)
+    private String image;
     @Enumerated(EnumType.STRING)
     private Status status;
 }

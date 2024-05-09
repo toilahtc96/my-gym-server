@@ -22,7 +22,7 @@ public class Header implements Serializable {
     private String firstTitle;
     @Column(name = "big_title")
     private String bigTitle;
-    @Column(name = "more_information")
+    @Column(name = "more_information",length = 1000)
     private String moreInformation;
     private String image;
     @Enumerated(EnumType.STRING)
