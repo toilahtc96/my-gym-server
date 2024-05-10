@@ -12,15 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class Comment {
+public class BlogEventTag {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
-    private String content;
-    @Column(name = "user_id")
-    private int userId;
     @Column(name = "blog_id")
     private int blogId;
+    @Column(name = "tag_id")
+    private int tagId;
     @Column(name = "event_id")
     private int eventId;
     @Enumerated(EnumType.STRING)
