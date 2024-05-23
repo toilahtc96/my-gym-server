@@ -21,7 +21,7 @@ public class HeaderController {
     @PostMapping("/add")
     public ResponseEntity add(@RequestBody HeaderRequest headerRequest) {
         Header headerAddEntity = headerService.addHeader(headerRequest);
-        if(Objects.isNull(headerAddEntity)) {
+        if (Objects.isNull(headerAddEntity)) {
             log.error("add Header Error");
             return ResponseEntity.badRequest().build();
         }
@@ -31,7 +31,7 @@ public class HeaderController {
     @PostMapping("/edit")
     public ResponseEntity edit(@RequestBody HeaderRequest headerRequest) {
         boolean edited = headerService.editHeader(headerRequest);
-        if(!edited) {
+        if (!edited) {
             log.error("edit Header Error");
             return ResponseEntity.badRequest().build();
         }
@@ -41,7 +41,7 @@ public class HeaderController {
     @PutMapping("/delete")
     public ResponseEntity delete(@RequestParam int id) {
         boolean blocked = headerService.blockHeader(id);
-        if(!blocked) {
+        if (!blocked) {
             log.error("delete Header Error");
             return ResponseEntity.badRequest().build();
         }
@@ -51,7 +51,7 @@ public class HeaderController {
     @GetMapping("/get-by-id")
     public ResponseEntity getById(@RequestParam int id) {
         Header getById = headerService.findById(id);
-        if(Objects.isNull(getById)) {
+        if (Objects.isNull(getById)) {
             log.error("get Header Error");
             return ResponseEntity.badRequest().build();
         }
@@ -61,6 +61,11 @@ public class HeaderController {
     @GetMapping("/get-all")
     public ResponseEntity getAll() {
         return ResponseEntity.ok().body(headerService.getAll());
+    }
+
+    @GetMapping("/get-page")
+    public ResponseEntity getPaging(@RequestParam int page, @RequestParam int size) {
+        return ResponseEntity.ok(headerService.findPage(page, size));
     }
 
     @GetMapping("/get-by-status")

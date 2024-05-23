@@ -6,6 +6,9 @@ import com.fitness.mygym.entity.Header;
 import com.fitness.mygym.repository.HeaderRepository;
 import com.fitness.mygym.request.HeaderRequest;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,5 +64,10 @@ public class HeaderService {
 
     public List<Header> findThreeActive() {
         return headerRepository.getByStatus(Status.ACTIVE);
+    }
+
+    public Page<Header> findPage(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return headerRepository.findAll(pageable);
     }
 }
